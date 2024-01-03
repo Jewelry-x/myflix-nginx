@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Video Player</title>
+</head>
+
+<body>
+    <video id="myVideo" width="640" height="360" controls>
+        <!-- Default video source -->
+        <source src="default.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        // Get the query parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoParam = urlParams.get('video');
+
+        // Check if the 'video' parameter is provided and set the video source
+        if (videoParam) {
+            const videoElement = document.getElementById('myVideo');
+            videoElement.src = videoParam;
+        }
+    </script>
+</body>
+
+</html>

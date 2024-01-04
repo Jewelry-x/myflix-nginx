@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <button onclick="goBack()">Go Back</button>
     <video id="myVideo" width="640" height="360" controls>
         <!-- Default video source -->
         <source src="default.mp4" type="video/mp4">
@@ -23,6 +24,12 @@
         if (videoParam) {
             const videoElement = document.getElementById('myVideo');
             videoElement.src = videoParam;
+        }
+    </script>
+
+    <script>
+        function goBack() {
+            window.history.back();
         }
     </script>
 </body>
